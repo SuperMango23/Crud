@@ -1,20 +1,21 @@
-package controllers;
+package com.example.controllers;
 
-import Entity.Vehicle;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.entity.Vehicle;
+import com.example.services.VehicleService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import services.VehicleService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/vehicles")
+@RequiredArgsConstructor
 public class VehicleController {
-
-    @Autowired
-    private VehicleService vehicleService;
-
-    // Lấy danh sách tất cả các xe
+	
+	//constructor
+	private final VehicleService vehicleService;
+	
+	// Lấy danh sách tất cả các xe
     @GetMapping
     public List<Vehicle> getAllVehicles() {
         return vehicleService.getAllVehicles();

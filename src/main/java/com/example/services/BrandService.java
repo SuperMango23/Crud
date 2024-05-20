@@ -1,7 +1,7 @@
-package services;
+package com.example.services;
 
-import Entity.Brand;
-import repositories.BrandRepository;
+import com.example.entity.Brand;
+import com.example.repositories.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
