@@ -1,6 +1,6 @@
-package repositories;
+package com.example.repositories;
 
-import Entity.Vehicle;
+import com.example.entity.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
+
     @Query("SELECT v FROM Vehicle v WHERE " +
            "(:brandName IS NULL OR v.brand.brandName LIKE %:brandName%) AND " +
            "(:manufactureYear IS NULL OR v.manufactureYear = :manufactureYear) AND " +
